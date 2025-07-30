@@ -9,7 +9,7 @@ Professores = [
     ("Cenez", 7),
     ("Tatiane", 5),
     ("Eurinardo", 9),
-    ("Julia", 10)
+    ("Pytagoras", 5)
 ]
 
 qtd_salas = 6
@@ -81,6 +81,7 @@ def buscaLocal(salas):
             novo[sala_old][hora_old][dia_old] = ""
             novo[new_sala][new_hora][new_dia] = prof
             break
+        #elif novo[new_sala][new_hora][new_dia] != "" and
         tentativas += 1
 
     custo_novo = avaliar(novo)
@@ -92,7 +93,8 @@ def buscaLocal(salas):
 
 def GRASP(iteracoes):
     melhor_solucao = None
-    melhor_custo = float("inf")
+    melhor_custo = float("inf") # Valor muito alto
+                                # para iniciar a comparação.
 
     for i in range(iteracoes):
         solucao = construcao()
@@ -110,7 +112,7 @@ if __name__ == "__main__":
     solucao, custo = GRASP(iteracoes)
 
     dias_semana = ["Seg", "Ter", "Qua", "Qui", "Sex"]
-    horarios = ["08h", "10h", "13h", "15h"]
+    horarios = ["08h", "10h", "13h", "D15h"]
 
     print("\nSolução final:")
     print(f"Custo = {custo}")
